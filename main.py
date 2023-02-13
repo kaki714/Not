@@ -1,4 +1,5 @@
 import requests
+import platform
 import json
 import base64
 import importlib
@@ -7,7 +8,7 @@ import os
 
 
 username='kaki714'
-token='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'
+token='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'
 repo='Not'
 
 
