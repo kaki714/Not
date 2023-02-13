@@ -8,7 +8,7 @@ import os
 
 
 username='kaki714'
-token='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'
+token='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'
 repo='Not'
 
 
