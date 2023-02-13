@@ -6,13 +6,13 @@ import time
 import os
 
 
-
 username='kaki714'
-token='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'
+token='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'
 repo='Not'
 
+
 url='https://api.github.com/repos/<user>/<repo>/contents/<filename>'
-filename='god.py'
+filename='bot.py'
 sleep_time=5
 filename_sha=None
 bot=None
