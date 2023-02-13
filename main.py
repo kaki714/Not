@@ -8,11 +8,11 @@ import os
 
 
 username='kaki714'
-token=''
+token='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'
 repo='Not'
 
 url='https://api.github.com/repos/<user>/<repo>/contents/<filename>'
-filename='bot.py'
+filename='god.py'
 sleep_time=5
 filename_sha=None
 bot=None
