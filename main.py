@@ -8,8 +8,7 @@ import os
 
 
 username='kaki714'
-token='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
-'
+token='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'
 repo='Not'
 
 url='https://api.github.com/repos/<user>/<repo>/contents/<filename>'
