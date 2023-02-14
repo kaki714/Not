@@ -3,9 +3,6 @@ import os
 import sysconfig
 import socket
 
-
-
-
 def upload_file_to_github(file_path):
     with open(file_path, 'rb') as f:
         file_content = f.read()
@@ -32,21 +29,15 @@ def upload_file_to_github(file_path):
         "message": "Uploading file",
         "content": file_content,
         "sha": sha,
-        "branch": branch
+    
     }
     response = requests.put(url, headers=headers, data=json.dumps(data))
 
     # Verificar si la solicitud fue exitosa
     if response.status_code == 200 or response.status_code == 201:
-        print(f"File uploaded successfully to {repository}:{branch}/{file_path}")
+        print(f"File uploaded successfully to Not {file_path}")
     else:
         print(f"Failed to upload file: {response.content}")
-
-# Ejemplo de uso
-
-
-
-
 
 
 
