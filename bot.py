@@ -2,9 +2,7 @@ import platform
 import os
 import sysconfig
 import socket
-import fcntl
-import struct
-import subprocess
+
 
 
 
