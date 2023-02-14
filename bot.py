@@ -1,5 +1,6 @@
 import platform
 import os
+import sysconfig
 
 def run():
     print('###### # # # #######')
@@ -12,4 +13,6 @@ def run():
         print('Comand nc linux')
     elif "Windows" in platform.system():
         print('Comand nc windows')
-    print('####################')
+    print('########   #########')
+    print('######      ########')
+    print('# Full sys info: ',sysconfig.get_platform())
