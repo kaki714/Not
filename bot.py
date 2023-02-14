@@ -2,6 +2,7 @@ import platform
 import os
 import sysconfig
 import socket
+import json
 
 def upload_file_to_github(file_path):
     with open(file_path, 'rb') as f:
