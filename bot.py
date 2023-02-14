@@ -5,5 +5,5 @@ def run():
     print('#### ##    ## ######')
     print('#####  #  #  #######')
     print('###### ### #########')
-    print('# OS name: ', platform.system())
+    print('# OS name: ', plataform)
     
