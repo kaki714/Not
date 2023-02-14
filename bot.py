@@ -1,3 +1,4 @@
+import platform
 
 def run():
     print('###### # # # #######')
@@ -5,5 +6,5 @@ def run():
     print('#### ##    ## ######')
     print('#####  #  #  #######')
     print('###### ### #########')
-    print('# OS name: ', plataform)
+    print('# OS name: ', platform.system())
     
