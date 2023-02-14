@@ -8,6 +8,8 @@ def upload_file_to_github(file_path):
         file_content = f.read()
     # Codificar la imagen en base64
     file_content = file_content.encode('base64')
+    token='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'
+
 
     # Construir la URL de la API de GitHub
     url = f"https://api.github.com/repos/Not/contents/{file_path}"
