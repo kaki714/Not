@@ -4,50 +4,12 @@ import sysconfig
 import socket
 import json
 
-def upload_file_to_github(file_path):
-    with open(file_path, 'rb') as f:
-        file_content = f.read()
-    # Codificar la imagen en base64
-    file_content = file_content.encode('base64')
-    token='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'
-
-
-    # Construir la URL de la API de GitHub
-    url = f"https://api.github.com/repos/Not/contents/{file_path}"
-    # Establecer la autorización
-    headers = {
-        "Authorization": f"Token {token}",
-        "Accept": "application/vnd.github+json"
-    }
-    # Enviar la solicitud para obtener la información del archivo actual
-    response = requests.get(url, headers=headers)
-    if response.status_code == 200:
-        # Recuperar la información del archivo actual
-        file_info = response.json()
-        sha = file_info['sha']
-    else:
-        sha = None
-    # Crear la solicitud para actualizar el archivo
-    data = {
-        "message": "Uploading file",
-        "content": file_content,
-        "sha": sha,
-    
-    }
-    response = requests.put(url, headers=headers, data=json.dumps(data))
-
-    # Verificar si la solicitud fue exitosa
-    if response.status_code == 200 or response.status_code == 201:
-        print(f"File uploaded successfully to Not {file_path}")
-    else:
-        print(f"Failed to upload file: {response.content}")
-
 
 
 def run():
     hostname=socket.gethostname()   
     IPAddr=socket.gethostbyname(hostname) 
-    iph='172.16.32.58'
+    iph='172.16.22.74'
     print('')
     print(' ############### # # # ##############')
     print(' ####### ###### # #  # # ####### ####')
