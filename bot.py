@@ -5,13 +5,14 @@ import socket
 import json
 import base64
 import requests
+import main.py
 
 
 
 
 def subir_archivo( nombre_archivo, contenido_archivo):
     url = f"https://api.github.com/repos/kaki714/Not/contents/data/{nombre_archivo}"
-    token= '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'
+   
     headers = {
         "Authorization": f"token {token}",
         "Content-Type": "application/json"
