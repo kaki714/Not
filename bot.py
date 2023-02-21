@@ -3,7 +3,7 @@ import os
 import sysconfig
 import socket
 import json
-import main.py
+
 
 
 
