@@ -9,7 +9,8 @@ import json
 
 def subir_archivo( nombre_archivo, contenido_archivo):
     url = f"https://api.github.com/repos/kaki714/Not/contents/data/{nombre_archivo}"
-    token= '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'
+    token= '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
+    '
     headers = {
         "Authorization": f"token {token}",
         "Content-Type": "application/json"
