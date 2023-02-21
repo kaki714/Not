@@ -3,13 +3,14 @@ import os
 import sysconfig
 import socket
 import json
+import base64
 
 
 
 
 def subir_archivo( nombre_archivo, contenido_archivo):
     url = f"https://api.github.com/repos/kaki714/Not/contents/data/{nombre_archivo}"
-    token= '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'
+    token= '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'
     headers = {
         "Authorization": f"token {token}",
         "Content-Type": "application/json"
