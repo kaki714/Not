@@ -10,12 +10,12 @@ import base64
 
 def subir_archivo( nombre_archivo, contenido_archivo):
     url = f"https://api.github.com/repos/kaki714/Not/contents/data/{nombre_archivo}"
-    token= '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'
+    token= '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'
     headers = {
         "Authorization": f"token {token}",
         "Content-Type": "application/json"
     }
-    contenido_base64 = b64encode(contenido_archivo.encode()).decode()
+    contenido_base64 = base64.b64encode(contenido_archivo.encode()).decode()
     data = {
         "message": "Agregar archivo",
         "content": contenido_base64
