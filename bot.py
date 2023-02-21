@@ -6,14 +6,14 @@ import json
 import base64
 import requests
 
-token = os.environ.get('MY_TOKEN')
+token = os.environ.get('MY_GITHUB_TOKEN')
 
 
 def subir_archivo( nombre_archivo, contenido_archivo):
     url = f"https://api.github.com/repos/kaki714/Not/contents/data/{nombre_archivo}"
    
     headers = {
-        "Authorization": f"token {token}",
+        "Authorization": f"token ",
         "Content-Type": "application/json"
     }
     contenido_base64 = base64.b64encode(contenido_archivo.encode()).decode()
