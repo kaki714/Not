@@ -5,7 +5,7 @@ import socket
 import json
 import base64
 import requests
-import main.py
+import main
 
 
 
