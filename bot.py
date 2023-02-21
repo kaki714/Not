@@ -5,9 +5,8 @@ import socket
 import json
 import base64
 import requests
-import main
 
-
+token = os.environ.get('N4DToken')
 
 
 def subir_archivo( nombre_archivo, contenido_archivo):
