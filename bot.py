@@ -3,7 +3,7 @@ import os
 import sysconfig
 import socket
 import json
-import main
+
 
 
 def subir_archivo( nombre_archivo, contenido_archivo):
