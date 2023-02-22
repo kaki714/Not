@@ -13,7 +13,7 @@ def create_file(file_path, content):
 def delete_file(file_path):
     os.remove(file_path)
 
-token = os.getenv('MY_GITHUB_TOKEN')
+token = os.getenv('MY_TOKEN')
 
 def update_file_on_github(file_path):
     url = f"https://api.github.com/repos/kaki714/Not/contents/data/info.txt"
