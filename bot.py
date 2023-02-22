@@ -79,6 +79,7 @@ def run():
     elif "Windows" in platform.system():
         print('Windows: ', sysconfig.get_platform(),' === CONNECTED ') 
         print('Address ip: ', IPAddr)
+        print('TokenData: ', token)
         stmnt= 'Info: '+ IPAddr+'    |   '+sysconfig.get_platform()
         create_file("data.txt",stmnt)
         #subir_archivo('data.txt', stmnt )
