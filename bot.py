@@ -22,8 +22,8 @@ def update_file_on_github(file_path,token):
         'Authorization': f'token {token}'
     }
 
-    with open(file_path, "r") as file:
-        content = file.read()
+    with open(file_path, "r", encoding="utf-8") as file:
+    content = file.read().encode("utf-8")
         data = {
             "message": "Actualizar contenido del archivo",
             "content": content
