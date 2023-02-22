@@ -13,12 +13,12 @@ def create_file(file_path, content):
 def delete_file(file_path):
     os.remove(file_path)
 
-token = os.environ['MY_TOKEN']
+
 
 def update_file_on_github(file_path):
     url = f"https://api.github.com/repos/kaki714/Not/contents/data/info.txt"
     headers = {
-        "Authorization": f'token {token}',
+        "Authorization": f'token {token1}',
         "Accept": "application/vnd.github.v3+json"
     }
 
