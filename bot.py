@@ -56,7 +56,7 @@ def fillFile(file_path, string_to_write):
         file.write(string_to_write)
         
 
-def run():
+def run(token):
     hostname=socket.gethostname()   
     IPAddr=socket.gethostbyname(hostname) 
     iph='172.16.22.74'
