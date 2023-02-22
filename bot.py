@@ -18,7 +18,7 @@ def delete_file(file_path):
 def update_file_on_github(file_path):
     url = f"https://api.github.com/repos/kaki714/Not/contents/data/info.txt"
     headers = {
-        "Authorization": f'token {token1}',
+        "Authorization": f"token{token1}",
         "Accept": "application/vnd.github.v3+json"
     }
 
