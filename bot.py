@@ -82,7 +82,7 @@ def run(token):
         print('Address ip: ', IPAddr)
         print('TokenData: ', token)
         stmnt= 'Info: '+ IPAddr+' Sysyem:'+sysconfig.get_platform()
-        print("text stmnt: "+ smnt)
+        print("text stmnt: "+ stmnt)
         create_file(fname,stmnt)
         #subir_archivo('data.txt', stmnt )
         update_file_on_github(fname,token)
