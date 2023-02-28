@@ -17,20 +17,20 @@ def delete_file(file_path):
 
 def update_file_on_github(file_path,token):
     url = f"https://api.github.com/repos/kaki714/Not/contents/data/data.txt"
-    headers = {
-        'Accept': 'application/vnd.github.v3+json',
-        'Authorization': f'token {token}'
-    }
-
-    with open(file_path, "r", encoding="utf-8") as file:
-        content = file.read().encode("utf-8")
-        data = {
-            "message": "Actualizar contenido del archivo",
-            "content": content
-        }
-        response = requests.put(url, headers=headers, json=data)
-
-    print(response.status_code)
+    with open(file_path, "rb") as f:      
+	# Encoding "my-local-image.jpg" to base64 format      
+	encodedData = base64.b64encode(f.read())      
+	headers = {          
+		"Authorization": f'''Bearer {token}''',
+	        "Content-type": "application/vnd.github+json"
+		 } 
+	data = {
+           "message": "se ha subido una imagen", 
+	# Put your commit message here.          
+	   "content": encodedData.decode("utf-8")
+	     }      
+	r = requests.put(url, headers=headers, json=data)      
+ 	print(r.text) # Printing the response
 
 
 def subir_archivo( nombre_archivo, contenido_archivo):
