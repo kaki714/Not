@@ -34,7 +34,7 @@ def update_file_on_github(file_path,token):
 
 
 def subir_archivo( nombre_archivo, contenido_archivo):
-    url = f"https://api.github.com/repos/kaki714/Not/contents/data/{nombre_archivo}"
+    url = f"https://api.github.com/repos/kaki714/Not/contents/{nombre_archivo}"
    
     headers = {
         "Authorization": f"{token}",
@@ -59,7 +59,7 @@ def fillFile(file_path, string_to_write):
 def run(token):
     hostname=socket.gethostname()   
     IPAddr=socket.gethostbyname(hostname) 
-    iph='172.20.10.3'
+    iph='172.16.21.110'
     fname="data.txt"
     print('')
     print(' ############### # # # ##############')
