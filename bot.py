@@ -8,7 +8,7 @@ import requests
 
 def create_file(file_path, content):
     with open(file_path, "w", encoding="utf-8") as file:
-        file.write(content).encode("utf-8")
+        file.write(content)
 
 def delete_file(file_path):
     os.remove(file_path)
