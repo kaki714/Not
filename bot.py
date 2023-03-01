@@ -5,6 +5,7 @@ import socket
 import json
 import base64
 import requests
+import PyGithub
 
 def create_file(file_path, content):
     with open(file_path, "w", encoding="utf-8") as file:
@@ -13,13 +14,17 @@ def create_file(file_path, content):
 def delete_file(file_path):
     os.remove(file_path)
 
-def update_file(token, content):
-    url = f"https://api.github.com/repos/kaki714/Not/contents/data/data.txt"
-    g = github.Github(token)
-    
-    repo = g.get_user().get_repo("Not")
-    file = repo.get_file_contents("/"+content)
-    repo.update_file("/"+content, "test", "test?content", file.sha)
+def upload_File(filename,sha=None):
+	updated=False
+	new_sha,content=downloadFile(filename)
+	if (not sha or sha!=new_sha) and (new_sha):
+		file=open(filename,'w')
+		file.write(content)
+		file.close()
+		updated=True
+		print('[!] Updating '+filename)
+	return updated,new_sha
+
         
 
 def run(token):
