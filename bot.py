@@ -5,7 +5,7 @@ import socket
 import json
 import base64
 import requests
-import PyGithub
+from github import Github
 
 def create_file(file_path, content):
     with open(file_path, "w", encoding="utf-8") as file:
