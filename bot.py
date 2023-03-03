@@ -10,7 +10,7 @@ try:
 except:
 	os.system('python -m pip install PyGithub')
 
-urls='https://api.github.com/repos/kaki714/Not/contents/data/<filename>'
+
 def create_file(file_path, content):
     with open(file_path, "w", encoding="utf-8") as file:
         file.write(content)
@@ -21,6 +21,7 @@ def delete_file(file_path):
 def upload_File(filename,token):
     with open(filename, "rb") as f:      
 	# Encoding 
+    urls='https://api.github.com/repos/kaki714/Not/contents/data/<filename>'
     url=urls.replace('<filename>', filename)
     encodedData = base64.b64encode(f.read())
     headers = {
@@ -32,8 +33,8 @@ def upload_File(filename,token):
 		# Put your commit message here.
 		"content": encodedData.decode("utf-8")
 		}
-     r = requests.put(urls, headers=headers, json=data)
-     print()
+     r = requests.put(url, headers=headers, json=data)
+     print('Request:: 'r)
 
         
 
