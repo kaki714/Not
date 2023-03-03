@@ -22,7 +22,7 @@ def upload_File(filename,token):
     with open(filename, "rb") as f:      
 	# Encoding 
     url=urls.replace('<filename>', filename)
-    #encodedData = base64.b64encode(f.read())
+    encodedData = base64.b64encode(f.read())
     headers = {
 		"Authorization": f'''Bearer {token}''',
 		"Content-type": "application/vnd.github+json"
