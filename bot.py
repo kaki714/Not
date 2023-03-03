@@ -19,7 +19,7 @@ def delete_file(file_path):
     os.remove(file_path)
 
 def upload_file(token,fname,sntc):
-	g = Github("tu_token")
+	g = Github(token)
 	repo = g.get_repo("kaki714/Not")
 	filename = "archivo.txt"
 	data = sntc
