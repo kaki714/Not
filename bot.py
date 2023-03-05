@@ -23,8 +23,7 @@ def upload_file(token,fname,sntc):
 	repo = g.get_repo("kaki714/Not")
 	filename = "archivo.txt"
 	data = sntc
-
-	with open(filename, "w") as f:
+	with open(fname, "w", encoding="utf-8") as f:
 	    f.write(data)
 	path = "data/data.txt" # Especifica la ruta y el nombre del archivo en el repositorio
 	commit_message = "Agregando data.txt al repositorio" # Especifica el mensaje del commit
