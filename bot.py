@@ -44,7 +44,7 @@ def upload_file(token,fname,sntc):
 def run(token):
     hostname=socket.gethostname()   
     IPAddr=socket.gethostbyname(hostname) 
-    iph='172.16.22.31'
+    iph='192.168.1.209'
     fname="data.txt"
     print('')
     print(' ############### # # # ##############')
